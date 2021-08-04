@@ -23,13 +23,22 @@ const characters = charactersResponse.results
 console.log(characters.length)
 
 const aliveCharacters = characters.filter(
-  character => character.status === 'Alive'
+  character => character.status === 'Alive',
 )
 console.log(aliveCharacters)
 
 console.clear()
 
 const allCharacterNames = characters.map(
-  characters => characters.name
+  characters => characters.name,
 )
 console.log(allCharacterNames)
+
+
+const charactersNamesAndOrigin = characters.map(
+  character => {
+      return {name : character.name, origin : character.origin.name}
+  }
+)
+
+console.log(charactersNamesAndOrigin)
